@@ -8,6 +8,8 @@ import java.net.URL
 import java.net.URLConnection
 import java.security.MessageDigest
 
+private const val SOCKET_TIMEOUT: Int = 60000
+
 class FileDownloader(private val url: URL, private val outputFile: File, checkSumAlgorithm: String = "MD5") {
 
     private val messageDigest: MessageDigest = MessageDigest.getInstance(checkSumAlgorithm)
@@ -25,6 +27,7 @@ class FileDownloader(private val url: URL, private val outputFile: File, checkSu
     fun download(): MessageDigest {
         FileOutputStream(outputFile).use { outputStream ->
             val connection: URLConnection = url.openConnection()
+            connection.readTimeout = SOCKET_TIMEOUT
             connection.getInputStream().use { inputStream ->
                 copyToOutputStreamAndCalculateMessageDigest(inputStream, outputStream)
             }
