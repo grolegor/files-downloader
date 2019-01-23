@@ -19,7 +19,7 @@ class FileListParser(private val content: String) {
             try {
                 url = URL(urlString)
             } catch (e: MalformedURLException) {
-                logger.error { "$urlString is not valid URL" }
+                logger.error { "$urlString is not valid URL: $e" }
                 return@forEach
             }
             rows += Row(url, md5)
@@ -28,5 +28,5 @@ class FileListParser(private val content: String) {
         return rows
     }
 
-    class Row(val url: URL, val checkSum: String)
+    data class Row(val url: URL, val checkSum: String)
 }
