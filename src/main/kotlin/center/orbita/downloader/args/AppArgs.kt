@@ -9,7 +9,7 @@ class AppArgs {
     lateinit var listFilesURL: String
         private set
 
-    @Parameter(names = ["-d", "--outputDirectory"],
+    @Parameter(names = ["-d", "--outputDirectory"], validateWith = [WriteAccessToDirectoryValidator::class],
             description = "Absolute or relative path to the directory where all files will be downloaded to")
     var outputDirectory: String = ""
         private set
