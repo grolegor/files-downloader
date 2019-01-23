@@ -23,8 +23,8 @@ This application has several command line parameters. You can get info about it 
 
 How to run application?
 -----------------------------------
-There are two ways to execute this application. For example:
- - Using _exec-maven-plugin_:
+There are two ways to execute this application.
+ - Using _exec-maven-plugin_. For example::
  
  `mvn compile exec:java -Dexec.args="--url http://evviva-adk.info/v/file_list.txt --outputDirectory /home/user/Downloads"`
  
