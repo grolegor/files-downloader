@@ -16,12 +16,10 @@ This application has several command line parameters. You can get info about it 
         --help
           Print the help
         -d, --outputDirectory
-          Absolute or relative path to the directory where all files will be 
-          downloaded to
+          Absolute or relative path to the directory where all files will be downloaded to
           Default: <empty string>
       * --url
-          URL of the file that contains comma-separated list of links to download 
-          and its md5 checksum
+          URL of the file that contains comma-separated list of links to download and its md5 checksum
 
 How to run application?
 -----------------------------------
